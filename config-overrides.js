@@ -1,8 +1,12 @@
 const modifyVars = require('./theme');
 const {
     override,
+    //less
     addLessLoader,
-    fixBabelImports
+    //按需引入样式
+    fixBabelImports,
+    //装饰器
+    addDecoratorsLegacy
 } = require('customize-cra');
 
 module.exports = override(
@@ -17,4 +21,5 @@ module.exports = override(
         libraryDirectory: 'es',
         style: true,
     }),
+    addDecoratorsLegacy(),
 );
